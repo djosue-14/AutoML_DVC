@@ -1,0 +1,6 @@
+.dvc/cache/
+.dvc/tmp/
+models/
+*plk
+__pycache__/
+dvc_storage/

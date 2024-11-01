@@ -1,0 +1,33 @@
+stages:
+  preprocess:
+    cmd: python src/preprocessing.py
+    deps:
+      - src/preprocessing.py
+      - data/raw/dataset.csv
+      - params.yaml
+    outs:
+      - data/processed/dataset_processed.pkl
+      - models/preprocessor.pkl
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/processed/dataset_processed.pkl
+      - params.yaml
+    outs:
+      - models/regresion_logistica_model.pkl
+      - models/random_forest_model.pkl
+      - results/feature_importances.csv
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/evaluate.py
+      - data/processed/dataset_processed.pkl
+      - models/regresion_logistica_model.pkl
+      - models/random_forest_model.pkl
+      - params.yaml
+    outs:
+      - results/evaluation_metrics.csv
+      - models/evaluation_results.pkl

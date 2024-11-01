@@ -75,4 +75,5 @@ pip install -r requirements.txt
 - Asegúrate de que el entrenamiento del modelo se haya completado sin errores.
 - Revisa los logs de DVC para más información sobre cualquier fallo en la ejecución del pipeline.
 - No olvides cambiar el target y el feature dependiendo del dataset
+- Crea la carpeta dvc_storage y results si fuera necesario
 
